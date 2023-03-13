@@ -8,16 +8,16 @@ chrome_driver_path = 'chromedriver'
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 url = "https://prueba-bolsas.krowdy.net/"
 driver.get(url) 
-ingresar = driver.find_element(By.CLASS_NAME, "jss24" ) 
+ingresar = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div[1]/div/div[2]/button[3]' ) 
 ingresar.click()
 
-correo = driver.find_element(By.CLASS_NAME,"jss94")
+correo = driver.find_element(By.XPATH,'//*[@id="root"]/div/div/div[1]/div/div[2]/div/div/input')
 correo.send_keys("test1.krowdy@gmail.com")
 
 ingresar_correo = driver.find_element(By.XPATH,'//*[@id="root"]/div/div/div[1]/div/div[2]/button')
 ingresar_correo.click()
 
-contraseña = driver.find_element(By.CLASS_NAME,"jss94")
+contraseña = driver.find_element(By.XPATH,'//*[@id="root"]/div/div/div[1]/div/div[2]/div[1]/div/input')
 time.sleep(2)
 contraseña.send_keys("krowders")
 
@@ -29,7 +29,7 @@ acceder = driver.find_element(By.XPATH,'//*[@id="root"]/div/div[1]/div[2]/div[1]
 acceder.click()
 
 time.sleep(2)
-search = driver.find_element(By.CLASS_NAME,"jss132" ) 
+search = driver.find_element(By.XPATH,'//*[@id="root"]/main/div[1]/div/div[2]/div/div/div/input' ) 
 search.send_keys("aviso")
 buscar = driver.find_element(By.XPATH,'//*[@id="root"]/main/div[1]/div/div[2]/button')
 buscar.click()
